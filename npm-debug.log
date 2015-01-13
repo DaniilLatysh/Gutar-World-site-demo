@@ -1,0 +1,65 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'crypto' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.34
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'crypto', null ]
+7 verbose cache add name=undefined spec="crypto" args=["crypto",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'crypto',
+8 verbose parsed url   path: 'crypto',
+8 verbose parsed url   href: 'crypto' }
+9 silly lockFile 44a97133-crypto crypto
+10 verbose lock crypto C:\Users\teacher\AppData\Roaming\npm-cache\44a97133-crypto.lock
+11 silly lockFile 44a97133-crypto crypto
+12 silly lockFile 44a97133-crypto crypto
+13 verbose addNamed [ 'crypto', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 6ddba3b0-crypto crypto@
+16 verbose lock crypto@ C:\Users\teacher\AppData\Roaming\npm-cache\6ddba3b0-crypto.lock
+17 silly addNameRange { name: 'crypto', range: '*', hasData: false }
+18 verbose request where is /crypto
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 1c9bcf80526b5d17
+21 verbose url raw /crypto
+22 verbose url resolving [ 'https://registry.npmjs.org/', './crypto' ]
+23 verbose url resolved https://registry.npmjs.org/crypto
+24 verbose request where is https://registry.npmjs.org/crypto
+25 info trying registry request attempt 1 at 19:44:52
+26 http GET https://registry.npmjs.org/crypto
+27 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+28 info trying registry request attempt 2 at 19:45:14
+29 http GET https://registry.npmjs.org/crypto
+30 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+31 info trying registry request attempt 3 at 19:46:26
+32 http GET https://registry.npmjs.org/crypto
+33 silly lockFile 6ddba3b0-crypto crypto@
+34 silly lockFile 6ddba3b0-crypto crypto@
+35 error network getaddrinfo ENOTFOUND
+35 error network This is most likely not a problem with npm itself
+35 error network and is related to network connectivity.
+35 error network In most cases you are behind a proxy or have bad network settings.
+35 error network
+35 error network If you are behind a proxy, please make sure that the
+35 error network 'proxy' config is set properly.  See: 'npm help config'
+36 error System Windows_NT 6.1.7601
+37 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "crypto"
+38 error cwd H:\JavaScript\workspace JavaScript\NewProject
+39 error node -v v0.10.34
+40 error npm -v 1.4.28
+41 error syscall getaddrinfo
+42 error code ENOTFOUND
+43 error errno ENOTFOUND
+44 verbose exit [ 1, true ]
