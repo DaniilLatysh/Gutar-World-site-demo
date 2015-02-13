@@ -1,0 +1,22 @@
+extends layout
+
+block content
+ section#formbox
+    form(name='form')
+        label(for='keyword') Keyword: 
+        br
+        |     
+        input#keyword(type='text', name='keyword')
+        br
+        |     
+        label(for='text') Value: 
+        br
+        |     
+        textarea#text(name='text')
+        br
+        |     
+        input#save(type='button', value='Save')
+ section#databox
+   No information avalibale
+  
+

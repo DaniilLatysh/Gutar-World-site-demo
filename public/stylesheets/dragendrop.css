@@ -1,0 +1,24 @@
+#images{
+	height: 150px;
+	width: 150px;
+}
+#dropbox{
+	border: 1px solid green;
+	height: 400px;
+	width: 600px;
+	background: none;
+	float: left;
+	
+	 margin: 0px;
+        padding: 0px;
+}
+
+#picturesbox{
+	height: 100px;
+	width: 100px;
+	background: none;
+	float: left;
+	
+	 margin: 100px;
+        padding: 0px;
+}

@@ -9,8 +9,8 @@ exports.index = function(req, res){
 	Maintext.findOne({'url':index}, function (err, text){
 		if(!text){
 			text = {
-				name: '404NotFond',
-				body: '404NotFond'
+				name: '404 Not Found',
+				body: '404 Not Found'
 			}
 		}
 		/*if(req.session.user){

@@ -1,95 +1,94 @@
 doctype html
-html
-  head
-  
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    
-
-  body
-#wrapper
-  .page
-    .header
-      h1.name Gibson
-      .logo
-        a(href='#')
-          img(height='100px', src='/images/GWL.png')
-      nav
-        ul.top-menu
-          hr
-          li
-            a.button.grow(href='home') HOME
-          li 
-            a.button.grow(href='index') ABOUT US
-          li
-            a.button.grow(href='/services/') SERVICES
-          li
-            a.button.grow(href='/partners/') PARTNERS
-          
-          li
-            a.button.grow(href='contact') CONTACT
-          li
-            a.button.grow(href='projects') PROJECTS
-          li
-            a.button.grow(href='reg') REGISTRATION
-          li
-            a.button.grow(href='cobinet') COBINET
-         
-            if userid
-               a(href='logout') Выход
-               a(href='cobinet') Кабинет
-             else
-               a(href='reg') Вход/Регистрация
-          hr
-    div
-      nav
-        ul.aside-menu
-          li
-            a.button.grow(href='/gutars/') Gutars
-          li
-            a.button.grow(href='/amps/') Guitar amps
-          li
-            a.button.grow(href='/accessories/') Guitar accessories
-          li
-            a.button.grow(href='/strings/') Strings
-          li
-            a.button.grow(href='/drums/') Drums and percussion
-          li
-            a.button.grow(href='/audio/') Audio Equipment
-    .menu-right
-      nav
-        ul.aside-menu2
-          h2 OUR OFFICES
-          p
-            img(width='200', height='200', alt='Our offices', src='/images/map.png')
-        ul.aside-menu3
-          h2 Banner
-          p
-            img(width='200', height='120', alt='Banner', src='/images/banner.png')
-      
-    section
-      blockquote
-           p
-            | “Music should strike fire from the hearts of men”
-           cite Ludwig van Beethoven
- 
-      h2.name2 
-
-        block content
-        div.content
-
-  footer
-    #footer
-        .image-effect-fall-back
-            .share-layer
-                 a.share-button.share-via-facebook(href='https://ru-ru.facebook.com/')
-                   i.fa.fa-facebook
-                        | Facebook
-                 a.share-button.share-via-twitter(href='https://twitter.com/')
-                   i.fa.fa-twitter
-                        |  Twitter
-                 a.share-button.share-via-google(href='https://www.google.com/')
-                   i.fa.fa-google
-                        |  Google +
-        
-   
+html(ng-app)
+	head
+		meta(charset='utf-8')
+		title Alpha
+		for style in styles
+			link(rel='stylesheet', href='#{style}')
+		for script in scripts
+			script(src='#{script}')
+	body
+		#wrapper
+			.page
+				.header
+					h1.name Gibson
+					.logo
+						a(href='#')
+							img(height='100px', src='/images/GWL.png')
+					nav
+						ul.top-menu
+								li
+									a.button.grow(href='#') HOME
+								li 
+									a.button.grow(href='index') ABOUT US
+								li
+									a.button.grow(href='chat') CHAT
+								li
+									a.button.grow(href='video') VIDEO
+								li
+									a.button.grow(href='contact') CONTACT
+								li
+									a.button.grow(href='projects') PROJECTS
+									if userid
+											li
+												a.button.grow(href='cobinet') COBINET
+											li
+												a.button.grow(href='logout') EXIT
+										else
+											li
+												a.button.grow(href='reg') REGISTRATION | LOGIN
+			div
+				nav
+					ul.aside-menu
+							li
+								a.button.grow(href='guitars') Guitars
+							li
+								a.button.grow(href='#') Guitar amps
+							li
+								a.button.grow(href='#') Guitar accessories
+							li
+								a.button.grow(href='#') Strings
+							li
+								a.button.grow(href='#') Drums and percussion
+							li
+								a.button.grow(href='#') Audio Equipment
+			div.menu-right 
+				.social.grow
+					p 
+						| ▼ Social here ▼
+				.bord.grow
+					.image-effect-fall-back
+						.share-layer
+							a.share-button.share-via-facebook(href='https://ru-ru.facebook.com/')
+								i.fa.fa-facebook
+									|Facebook
+							a.share-button.share-via-twitter(href='https://twitter.com/')
+								i.fa.fa-twitter
+									|Twitter
+							a.share-button.share-via-google(href='https://www.google.com/')
+								i.fa.fa-google
+									|Google+
+							a.share-button.share-via-VK(href='https://www.vk.com/')
+								i.fa.fa-VK
+									|VKontakte
+				.social.grow
+					p 
+						| Google Map
+				div#map-canvas(href='location')
+					
+				
+				
+			div.content
+				blockquote
+						p
+							| “Music should strike fire from the hearts of men”
+							cite Ludwig van Beethoven
+				
+				block content
+			.footer
+				.copyright
+					| © Copyright
+				.contact-footer
+					p
+						| You are can contact us by phone: (706) 724-1172
+				

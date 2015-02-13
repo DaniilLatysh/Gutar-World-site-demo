@@ -1,11 +1,15 @@
 extends layout
-
-
+head
+ style.
+   #butt{}
+body
 block content
-  h2  Регистрация 
-  form(method='post', action='/reg')
+  h1  Регистрация 
+   form(method='post', action='/reg')
+    h4 Введите ваш логин:
     input(type='text', name='username')
     br
+    h4 Введите ваш пароль:
     input(type='password', name='password')
-    input(type='submit', value='ok')
+    input#butt(type='submit', value='ok')
  

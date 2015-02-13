@@ -1,0 +1,15 @@
+footer
+     #footer
+         .image-effect-fall-back
+             .share-layer
+                  a.share-button.share-via-facebook(href='https://ru-ru.facebook.com/')
+                    i.fa.fa-facebook
+                         | Facebook
+                  a.share-button.share-via-twitter(href='https://twitter.com/')
+                    i.fa.fa-twitter
+                         |  Twitter
+                  a.share-button.share-via-google(href='https://www.google.com/')
+                    i.fa.fa-google
+                         |  Google +
+        
+   

@@ -1,4 +1,6 @@
 {
+	"scripts":["/javascripts/jquery-2.1.3.min.js", "/javascripts/main.js"],
+	"styles":["/stylesheets/style.css"],
 	"port":3000,
 	"mongoose": {
 	"uri": "mongodb://localhost/kurs",

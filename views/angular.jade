@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 Angular
+  div(ng-controller='CastController')
+    div(ng-repeat='item in items')
+     h3 {{item.title}}
+  

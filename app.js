@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('./config');
-
+var lessMiddleware = require('less-middleware');
 
 
 
@@ -17,6 +17,16 @@ var checkauth = require('./utils/checkauth');
 var auth = require('./routes/auth');
 var chat = require('./routes/chat');
 var reg = require('./routes/reg');
+var video = require('./routes/video');
+var canvas = require('./routes/canvas');
+var location = require('./routes/location');
+var dragendrop = require('./routes/dragendrop');
+var storage = require('./routes/storage');
+var angular = require('./routes/angular');
+
+var guitars = require('./routes/guitars');
+
+
 
 var app = require('express')();
 var http = require('http').Server(app);
@@ -34,7 +44,7 @@ var maintext = new Maintext ({
 var maintext = new Maintext({
 	name: 'Contact to USA',
 	body: '',
-	url: 'contact'
+	//url: 'contact'
 });
 
 var maintext = new Maintext({
@@ -51,6 +61,7 @@ maintext.save(function(err, user){
 //end
 
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -59,24 +70,28 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-
-app.use(express.bodyParser({keepExtensions:true, uploadDir: 'public/tmp'}))
-
 app.use(express.session({
-	secret: 'abc123',
-	key: 'sid'
+	secret: '123abc', key: 'sid' 
 }));
 
-app.use(function(req, res, next){
+app.use(require('less-middleware')
+	(__dirname+'public/stylesheets/style.less')
+);
+
+app.use(function(req,res,next){
 	res.locals = {
+		scripts: config.get('scripts'),
+		styles: ['/stylesheets/style.css', '/bootstrap/css/bootstrap.min.css'],
 		userid: req.session.user
-	};
+	}; 
 	next();
 });
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
-
+app.use(express.bodyParser({
+	keepExtensions:true,
+	uploadDir: 'public/tmp'
+}));
 
 app.get('/', routes.index);
 app.get('/users', users.list);
@@ -84,6 +99,14 @@ app.get('/reg', reg.index);
 app.get('/cobinet', checkauth, auth.cobinet);
 app.get('/logout', checkauth, reg.logout);
 app.get('/chat', chat.index);
+app.get('/video', video.index);
+app.get('/canvas', canvas.index);
+app.get('/location', location.index);
+app.get('/dragendrop', dragendrop.index);
+app.get('/storage', storage.index);
+app.get('/angular', angular.index);
+
+app.get('/guitars', guitars.index);
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/chat');
@@ -110,6 +133,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+
+
+
 // error handlers
 
 // development error handler
@@ -134,8 +160,10 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+
 http.listen(config.get('port'), function(){
-  console.log('listening on *:'+config.get('port'));
+  console.log('listening on : '+config.get('port'));
 });
 //http.listen(config.get('port'));
 module.exports = app;

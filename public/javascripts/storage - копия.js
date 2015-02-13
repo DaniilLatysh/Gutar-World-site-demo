@@ -1,0 +1,1 @@
+console.log('guitars script conected');
